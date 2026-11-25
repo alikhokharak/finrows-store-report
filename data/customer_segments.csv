@@ -1,0 +1,7 @@
+segment,customers,two_year_revenue,avg_orders,avg_days_since_last_order,monthly_spend_when_active
+Champions,1385,11774974,15.9,20,650352
+Loyal / growing,721,724237,2.9,24,181101
+Recent one-time buyers,299,107532,1.0,29,107532
+At-risk VIPs,416,1441678,9.0,105,91929
+Cooling off,632,554506,2.3,110,198648
+Lost (6+ months quiet),2371,2241124,2.6,415,789949
