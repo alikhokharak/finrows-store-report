@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Store Health Report – UK Online Retailer | Finrows</title>
+<meta name="description" content="Sample e-commerce store health report by Finrows on the public UCI Online Retail II dataset.">
+<style>
+:root{--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--panel:#f8fafc;--blue:#2563eb;--good:#16a34a;--bad:#dc2626}
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.55}
+.wrap{max-width:980px;margin:0 auto;padding:32px 20px 60px}
+.brand{font-size:12px;letter-spacing:.14em;font-weight:700;color:var(--blue);text-transform:uppercase}
+h1{font-family:Georgia,serif;font-weight:400;font-size:clamp(28px,5vw,40px);line-height:1.15;margin:8px 0}
+.sub{color:var(--muted);margin:0 0 22px} .lead{font-size:clamp(17px,2.4vw,20px);margin:0 0 26px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:30px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+.card h3{margin:0;font-size:12px;color:var(--muted);font-weight:600} .big{font-family:Georgia,serif;font-size:26px;margin:6px 0 2px}
+.chg{font-size:13px;color:var(--muted)} .good{color:var(--good);font-weight:600} .bad{color:var(--bad);font-weight:600}
+h2{font-size:20px;margin:36px 0 6px} .note{color:var(--muted);margin:0 0 12px} .note b{color:var(--ink)}
+img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}
+.tw{overflow-x:auto} table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;font-size:12px;color:var(--muted);border-bottom:1px solid var(--line);padding:6px 8px} td{border-bottom:1px solid var(--line);padding:7px 8px}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums} td.hot{color:var(--bad);font-weight:600}
+ol.recs{list-style:none;padding:0;display:grid;gap:12px} ol.recs li{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+ol.recs h4{margin:0 0 4px} .cta{margin-top:30px;padding:18px;border-radius:12px;background:#eff6ff;border:1px solid #bfdbfe}
+details{margin-top:22px;color:var(--muted)} summary{cursor:pointer;color:var(--ink)} a{color:var(--blue)}
+footer{margin-top:30px;font-size:13px;color:var(--muted)}
+</style></head><body><div class="wrap">
+<div class="brand">Finrows · Sample store health report</div>
+<h1>UK online gift retailer: where growth came from, and where it is leaking</h1>
+<p class="sub">Real, anonymised transactions of a UK online store (public UCI "Online Retail II" dataset). Last 12 months = Dec 2010 – Nov 2011, compared with the 12 months before. Amounts in GBP.</p>
+<p class="lead">Net sales grew <b>+6.1%</b>, but only because orders got bigger: the number of orders fell <b>4.0%</b> and first-time customers in Jul–Nov fell <b>37.3%</b>. The store now leans on a small group of loyal buyers, and <b>416</b> of its regulars have gone quiet.</p>
+
+<div class="kpis">
+<div class="card"><h3>Net sales (after refunds)</h3><div class="big">£9,754,386</div><div class="chg"><span class="good">+6.1%</span> vs prior 12 months</div></div>
+<div class="card"><h3>Orders</h3><div class="big">18,956</div><div class="chg"><span class="bad">−4.0%</span> vs prior 12 months</div></div>
+<div class="card"><h3>Average order value</h3><div class="big">£526.94</div><div class="chg"><span class="good">+10.3%</span> vs prior 12 months</div></div>
+<div class="card"><h3>Known customers who ordered</h3><div class="big">4,292</div><div class="chg"><span class="good">+1.3%</span> vs prior 12 months</div></div>
+<div class="card"><h3>Refund rate</h3><div class="big">2.35%</div><div class="chg"><span class="good">−0.21 pts</span> vs prior 12 months</div></div>
+</div>
+
+<h2>Monthly sales: a strong Sep–Nov peak both years</h2>
+<p class="note">Gross sales by month; peak months in blue.</p>
+<img src="monthly_sales.png" alt="Bar chart of monthly gross sales, Dec 2009 to Nov 2011">
+
+<h2>Finding 1 · New customers are drying up</h2>
+<p class="note">First-time buyers per month. Jul–Nov 2010 brought <b>1,288</b> new customers; the same months of 2011 brought <b>808</b>. Growth came from existing buyers spending more per order, which cannot last forever.</p>
+<img src="new_customers.png" alt="Bar chart of new customers per month">
+
+<h2>Finding 2 · Revenue depends on a few loyal buyers</h2>
+<p class="note">The top 10% of customers (<b>429</b> accounts) brought <b>60.3%</b> of last year's revenue from known customers. Below: every customer grouped by how recently and how often they buy.</p>
+<img src="customer_groups.png" alt="Horizontal bars of two-year revenue by customer group">
+
+<h2>Finding 3 · Refund leaks by product</h2>
+<p class="note">Products with the most money refunded in the last 12 months. A high refunded share usually points to a quality, packaging or description problem.</p>
+<div class="tw"><table><thead><tr><th>Product</th><th class="n">Refunded</th><th class="n">Sales</th><th class="n">Refunded share</th></tr></thead><tbody>
+<tr><td class="">Regency Cakestand 3 Tier</td><td class="n">£9,797</td><td class="n">£181,957</td><td class="n">5.4%</td></tr>
+<tr><td class="">White Hanging Heart T-Light Holder</td><td class="n">£6,624</td><td class="n">£109,678</td><td class="n">6.0%</td></tr>
+<tr><td class="">Fairy Cake Flannel Assorted Colour</td><td class="n">£6,554</td><td class="n">£18,301</td><td class="n hot">35.8%</td></tr>
+<tr><td class="">Pantry Chopping Board</td><td class="n">£4,803</td><td class="n">£5,806</td><td class="n hot">82.7%</td></tr>
+<tr><td class="">Doormat Fairy Cake</td><td class="n">£4,555</td><td class="n">£24,109</td><td class="n">18.9%</td></tr>
+<tr><td class="">Gin + Tonic Diet Metal Sign</td><td class="n">£3,775</td><td class="n">£26,272</td><td class="n">14.4%</td></tr>
+<tr><td class="">Tea Time Party Bunting</td><td class="n">£3,693</td><td class="n">£13,130</td><td class="n hot">28.1%</td></tr>
+<tr><td class="">Feltcraft Doll Molly</td><td class="n">£3,519</td><td class="n">£11,958</td><td class="n hot">29.4%</td></tr>
+<tr><td class="">Colour Glass. Star T-Light Holder</td><td class="n">£3,256</td><td class="n">£18,912</td><td class="n">17.2%</td></tr>
+<tr><td class="">Pink Blue Felt Craft Trinket Box</td><td class="n">£2,779</td><td class="n">£13,765</td><td class="n">20.2%</td></tr>
+</tbody></table></div>
+
+<h2>Best sellers, last 12 months</h2>
+<div class="tw"><table><thead><tr><th>Product</th><th class="n">Revenue</th><th class="n">Units</th></tr></thead><tbody>
+<tr><td class="">Regency Cakestand 3 Tier</td><td class="n">£181,957</td><td class="n">14,487</td></tr>
+<tr><td class="">White Hanging Heart T-Light Holder</td><td class="n">£109,678</td><td class="n">39,018</td></tr>
+<tr><td class="">Party Bunting</td><td class="n">£99,377</td><td class="n">18,321</td></tr>
+<tr><td class="">Jumbo Bag Red Retrospot</td><td class="n">£94,680</td><td class="n">48,787</td></tr>
+<tr><td class="">Paper Chain Kit 50'S Christmas</td><td class="n">£63,339</td><td class="n">18,721</td></tr>
+<tr><td class="">Assorted Colour Bird Ornament</td><td class="n">£59,439</td><td class="n">36,647</td></tr>
+<tr><td class="">Rabbit Night Light</td><td class="n">£57,322</td><td class="n">26,477</td></tr>
+<tr><td class="">Chilli Lights</td><td class="n">£56,095</td><td class="n">10,766</td></tr>
+<tr><td class="">Jumbo Bag Pink Polkadot</td><td class="n">£42,237</td><td class="n">21,379</td></tr>
+<tr><td class="">Spotty Bunting</td><td class="n">£41,783</td><td class="n">8,189</td></tr>
+</tbody></table></div>
+
+<h2>What we would do next</h2>
+<ol class="recs">
+<li><h4>1. Win back the at-risk VIPs</h4><b>416</b> customers who averaged <b>9.0</b> orders have not ordered for about <b>105</b> days. A personal email or call with a reorder offer is cheap. If 20% came back at their old pace, that is about <b>£18,386</b> a month.</li>
+<li><h4>2. Fix new-customer acquisition before the next peak</h4>First-time buyers in Jul–Nov changed by <b>−37.3%</b>. Review ad spend, marketplace listings and the first-order offer, and track new customers every month.</li>
+<li><h4>3. Protect the top 10%</h4>With <b>60.3%</b> of revenue coming from them, losing a few big wholesale buyers would hurt. Give them early access to the Christmas range and a named contact.</li>
+<li><h4>4. Check the high-refund products</h4>For example, <b>82.7%</b> of Pantry Chopping Board sales were refunded. Fix the listing or the supplier, or drop the product.</li>
+</ol>
+
+<div class="cta"><b>Want this report for your own store or your agency's clients?</b><br>Finrows turns Shopify / e-commerce order exports into monthly reports like this one.<br>Contact Ali Usman · <a href="mailto:alikhokhar.ak1012@gmail.com">alikhokhar.ak1012@gmail.com</a> · <a href="https://www.linkedin.com/in/ali-usman-5871b8342">LinkedIn</a></div>
+
+<details><summary>About the data and method</summary>
+<p>Source: "Online Retail II", UCI Machine Learning Repository (Chen, 2012), also on Kaggle. A UK-based online gift-ware retailer whose customers are often wholesalers. Transactions 1 Dec 2009 – 30 Nov 2011 (the partial month of Dec 2011 is left out).</p>
+<p>Cleaning: removed postage, bank charges, manual adjustments and zero-price lines; removed one data-entry error in Jan 2011 (a single 74,215-unit order cancelled 16 minutes later). Refunds are invoices starting with "C". Orders without a customer ID (about 15% of last year's sales) count in sales but not in customer figures. "New customers" = first purchase seen in this data. Customer groups use recency and order count as of 1 Dec 2011: Champions = ordered in the last 60 days with 5+ orders; At-risk VIPs = 61–180 days quiet with 5+ orders; Lost = quiet for more than 180 days. No cost data is available, so this report covers revenue, not profit.</p>
+<p>Code and tables: <a href="https://github.com/alikhokharak/finrows-store-report">github.com/alikhokharak/finrows-store-report</a></p>
+</details>
+<footer>© Finrows · Built with Python (pandas, matplotlib)</footer>
+</div></body></html>
