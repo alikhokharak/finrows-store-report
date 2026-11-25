@@ -8,7 +8,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent
 D, DOCS = ROOT / "data", ROOT / "docs"
-IMG = DOCS / "img"
+IMG = DOCS
 IMG.mkdir(parents=True, exist_ok=True)
 
 BLUE, TEAL, GREY, RED, INK = "#2563eb", "#0d9488", "#cbd5e1", "#dc2626", "#0f172a"
@@ -143,15 +143,15 @@ footer{{margin-top:30px;font-size:13px;color:var(--muted)}}
 
 <h2>Monthly sales: a strong Sep–Nov peak both years</h2>
 <p class="note">Gross sales by month; peak months in blue.</p>
-<img src="img/monthly_sales.png" alt="Bar chart of monthly gross sales, Dec 2009 to Nov 2011">
+<img src="monthly_sales.png" alt="Bar chart of monthly gross sales, Dec 2009 to Nov 2011">
 
 <h2>Finding 1 · New customers are drying up</h2>
 <p class="note">First-time buyers per month. Jul–Nov 2010 brought <b>{nc10:,}</b> new customers; the same months of 2011 brought <b>{nc11:,}</b>. Growth came from existing buyers spending more per order, which cannot last forever.</p>
-<img src="img/new_customers.png" alt="Bar chart of new customers per month">
+<img src="new_customers.png" alt="Bar chart of new customers per month">
 
 <h2>Finding 2 · Revenue depends on a few loyal buyers</h2>
 <p class="note">The top 10% of customers (<b>{int(top10.customers):,}</b> accounts) brought <b>{top10.revenue_share_pct:.1f}%</b> of last year's revenue from known customers. Below: every customer grouped by how recently and how often they buy.</p>
-<img src="img/customer_groups.png" alt="Horizontal bars of two-year revenue by customer group">
+<img src="customer_groups.png" alt="Horizontal bars of two-year revenue by customer group">
 
 <h2>Finding 3 · Refund leaks by product</h2>
 <p class="note">Products with the most money refunded in the last 12 months. A high refunded share usually points to a quality, packaging or description problem.</p>
